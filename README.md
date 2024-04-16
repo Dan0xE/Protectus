@@ -1,6 +1,11 @@
 # Protectus
 
-Call VmProtect functions directly from your Tauri WebView!
+> [!WARNING]
+> Currently only works with VmProtect Ultimate, see [#2](https://github.com/Dan0xE/protectus/issues/2)
+
+Call VmProtect functions directly from your Tauri WebView.
+
+---
 
 ## Supported functions
 
