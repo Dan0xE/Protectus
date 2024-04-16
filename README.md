@@ -1,4 +1,4 @@
-# Protecuts
+# Protectus
 
 Call VmProtect functions directly from your Tauri WebView!
 
