@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "main": "webview-dist/index.js",
   "license": "MIT",
-  "publishConfig": {
-    "access": "restricted",
-    "registry": "https://registry.npmjs.org/"
-  },
   "dependencies": {
     "@tauri-apps/api": "^2.0.0-beta"
   },
