@@ -2,6 +2,6 @@ target
 webview-dist
 Cargo.lock
 node_modules
-.tsbuildinfo
+tsconfig.tsbuildinfo
 
 
