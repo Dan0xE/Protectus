@@ -1,0 +1,39 @@
+{
+  "name": "protectus",
+  "version": "0.2.2",
+  "main": "webview-dist/index.js",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0-beta"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "@types/node": "^20.3.1",
+    "eslint": "^7.19.0",
+    "eslint-plugin-import": "^2.20.0",
+    "gts": "^5.3.0",
+    "prettier": "^2.8.8"
+  },
+  "scripts": {
+    "build": "tsc",
+    "gts-lint": "gts lint",
+    "clean": "gts clean",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx ."
+  },
+  "types": "webview-dist/index.d.ts",
+  "description": "Protectus acts as an interface between VmProtect-rust and our Applications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dan0xE/protectus.git"
+  },
+  "author": "Daniel <Dan0xE>",
+  "bugs": {
+    "url": "https://github.com/Dan0xE/protectus/issues"
+  },
+  "homepage": "https://github.com/Dan0xE/protectus#readme"
+}

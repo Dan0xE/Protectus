@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-is-debugger-present-command"
+description = "Enables the is_debugger_present_command command without any pre-configured scope."
+commands.allow = ["is_debugger_present_command"]
+
+[[permission]]
+identifier = "deny-is-debugger-present-command"
+description = "Denies the is_debugger_present_command command without any pre-configured scope."
+commands.deny = ["is_debugger_present_command"]

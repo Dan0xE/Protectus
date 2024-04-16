@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-get-hwid-command"
+description = "Enables the get_hwid_command command without any pre-configured scope."
+commands.allow = ["get_hwid_command"]
+
+[[permission]]
+identifier = "deny-get-hwid-command"
+description = "Denies the get_hwid_command command without any pre-configured scope."
+commands.deny = ["get_hwid_command"]

@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-deactivate-license-command"
+description = "Enables the deactivate_license_command command without any pre-configured scope."
+commands.allow = ["deactivate_license_command"]
+
+[[permission]]
+identifier = "deny-deactivate-license-command"
+description = "Denies the deactivate_license_command command without any pre-configured scope."
+commands.deny = ["deactivate_license_command"]

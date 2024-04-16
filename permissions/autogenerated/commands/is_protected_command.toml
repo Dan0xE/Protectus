@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-is-protected-command"
+description = "Enables the is_protected_command command without any pre-configured scope."
+commands.allow = ["is_protected_command"]
+
+[[permission]]
+identifier = "deny-is-protected-command"
+description = "Denies the is_protected_command command without any pre-configured scope."
+commands.deny = ["is_protected_command"]

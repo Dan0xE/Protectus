@@ -1,0 +1,22 @@
+name: "ci: tag new version"
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+    - "package.json"
+    tags-ignore:
+      - '*'
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: butlerlogic/action-autotag@1.1.2
+        with:
+          root: "./"
+        env:
+          GITHUB_TOKEN: "${{ secrets.BUILD_ACTION }}"
+
