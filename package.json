@@ -1,6 +1,6 @@
 {
   "name": "protectus",
-  "version": "0.2.2",
+  "version": "0.1.0",
   "main": "webview-dist/index.js",
   "license": "MIT",
   "publishConfig": {
