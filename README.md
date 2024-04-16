@@ -40,7 +40,7 @@ This will be expanded in the near future!
 ## Prerequisites
 
 - VmProtect Installation
-- Tauri Version > 2.0.0-beta.0
+- Tauri Version >= 2.0.0-beta
 
 When using a Debug Build of your Application, please copy the following files from VmProtect into your target/debug folder:
 
