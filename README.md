@@ -32,7 +32,7 @@ This will be expanded in the near future!
   ]
 ```
 
-## Prerequisite
+## Prerequisites
 
 - VmProtect Installation
 - Tauri Version > 2.0.0-beta.0
