@@ -50,7 +50,7 @@ export async function activateLicense(code: string): Promise<string> {
 }
 
 /** Deactivates a given License Code
- *  @param {Promise<string>} serial License Code to Deactivate
+ *  @param {string} serial License Code to Deactivate
  *  @returns {Promise<string>} Operation Result
  */
 export async function deactivateLicense(serial: string): Promise<string> {
