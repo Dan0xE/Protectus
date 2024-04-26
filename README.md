@@ -34,7 +34,7 @@ Protectus Permission List:
 
 ```json
 "permissions": [
-    "protectus:allow-feature-check-command"
+    "protectus:allow-feature-check-command",
     "protectus:allow-is-debugger-present-command",
     "protectus:allow-is-protected-command",
     "protectus:allow-is-virtual-machine-command",
