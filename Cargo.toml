@@ -1,6 +1,6 @@
 [package]
 name = "protectus"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Dan0xE <contact@dan0xe.me>"]
 exclude = ["/webview-src", "/examples"]
@@ -17,3 +17,8 @@ chrono = "0.4"
 
 [build-dependencies]
 tauri-plugin = { version = "2.0.0-beta", features = ["build"] }
+
+[features]
+default = ["service"]
+service = []
+licensing = []

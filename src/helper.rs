@@ -1,6 +1,7 @@
 use std::time::Duration;
 
 use serde::Serialize;
+use tauri::command;
 use vmprotect::licensing::{ActivationStatus, SerialNumberData, SerialState};
 
 #[derive(Serialize)]
@@ -67,4 +68,24 @@ pub fn activation_status_to_error_message(status: ActivationStatus) -> String {
         ActivationStatus::NotAvailable => "The license is not available.".to_string(),
         ActivationStatus::NulError => "The license contains a NUL character.".to_string(),
     }
+}
+
+#[derive(Serialize)]
+pub struct Features {
+    pub licensing: bool,
+    pub service: bool,
+}
+
+impl Features {
+    pub fn new() -> Features {
+        Features {
+            licensing: cfg!(feature = "licensing"),
+            service: cfg!(feature = "service"),
+        }
+    }
+}
+
+#[command]
+pub fn feature_check_command() -> Result<Features, ()> {
+    Ok(Features::new()) 
 }

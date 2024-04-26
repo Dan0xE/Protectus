@@ -25,6 +25,7 @@
     "protectus:allow-get-serial-number-state-command",
     "protectus:allow-activate-license-command",
     "protectus:allow-deactivate-license-command",
-    "protectus:allow-set-serial-number-command"
+    "protectus:allow-set-serial-number-command",
+    "protectus:allow-feature-check-command"
   ]
 }

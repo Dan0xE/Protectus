@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-feature-check-command"
+description = "Enables the feature_check_command command without any pre-configured scope."
+commands.allow = ["feature_check_command"]
+
+[[permission]]
+identifier = "deny-feature-check-command"
+description = "Denies the feature_check_command command without any pre-configured scope."
+commands.deny = ["feature_check_command"]

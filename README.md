@@ -1,11 +1,5 @@
 # Protectus
 
-> [!WARNING]
-> Currently only works with VmProtect Ultimate, see [#2](https://github.com/Dan0xE/protectus/issues/2)
-
-Call VmProtect functions directly from your Tauri WebView.
-
----
 
 ## Supported functions
 
@@ -23,8 +17,24 @@ This will be expanded in the near future!
 
 ## Tauri Plugin Permissions
 
+> [!IMPORTANT]
+> Protectus performs feature checks at runtime before executing any function.
+> This is done to verify whether a feature that the called function depends on (for example, 'licensing')
+> is enabled in the Rust backend, in order to prevent unwanted behavior.
+> Without adding the following permission, Protectus will not function properly!
+
 ```json
 "permissions": [
+    "protectus:allow-feature-check-command"
+]
+```
+
+Protectus Permission List:
+
+
+```json
+"permissions": [
+    "protectus:allow-feature-check-command"
     "protectus:allow-is-debugger-present-command",
     "protectus:allow-is-protected-command",
     "protectus:allow-is-virtual-machine-command",
@@ -42,17 +52,15 @@ This will be expanded in the near future!
 - VmProtect Installation
 - Tauri Version >= 2.0.0-beta
 
-When using a Debug Build of your Application, please copy the following files from VmProtect into your target/debug folder:
+When using a Debug Build of your application, copy either all files or only the files necessary for your operating system and architecture from VmProtect into your `target/debug` folder:
 
-- libVMProtectSDK.dylib
-- libVMProtectSDK32.so
-- libVMProtectSDK64.so
-- VMProtectSDK32.dll
-- VMProtectSDK32.lib
-- VMProtectSDK64.dll
-- VMProtectSDK64.lib
+- For macOS: `libVMProtectSDK.dylib`
+- For 32-bit Linux: `libVMProtectSDK32.so`
+- For 64-bit Linux: `libVMProtectSDK64.so`
+- For 32-bit Windows: `VMProtectSDK32.dll`, `VMProtectSDK32.lib`
+- For 64-bit Windows: `VMProtectSDK64.dll`, `VMProtectSDK64.lib`
 
-## Limitations of the Demo
+## Limitations when using Debug Builds
 
 Some functions do not return a valid result until the Application is protected with VmProtect
 

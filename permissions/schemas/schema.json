@@ -323,6 +323,20 @@
           ]
         },
         {
+          "description": "allow-feature-check-command -> Enables the feature_check_command command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "allow-feature-check-command"
+          ]
+        },
+        {
+          "description": "deny-feature-check-command -> Denies the feature_check_command command without any pre-configured scope.",
+          "type": "string",
+          "enum": [
+            "deny-feature-check-command"
+          ]
+        },
+        {
           "description": "allow-get-hwid-command -> Enables the get_hwid_command command without any pre-configured scope.",
           "type": "string",
           "enum": [

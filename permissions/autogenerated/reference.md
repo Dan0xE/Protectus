@@ -4,6 +4,8 @@
 |`deny-activate-license-command`|Denies the activate_license_command command without any pre-configured scope.|
 |`allow-deactivate-license-command`|Enables the deactivate_license_command command without any pre-configured scope.|
 |`deny-deactivate-license-command`|Denies the deactivate_license_command command without any pre-configured scope.|
+|`allow-feature-check-command`|Enables the feature_check_command command without any pre-configured scope.|
+|`deny-feature-check-command`|Denies the feature_check_command command without any pre-configured scope.|
 |`allow-get-hwid-command`|Enables the get_hwid_command command without any pre-configured scope.|
 |`deny-get-hwid-command`|Denies the get_hwid_command command without any pre-configured scope.|
 |`allow-get-serial-number-data-command`|Enables the get_serial_number_data_command command without any pre-configured scope.|

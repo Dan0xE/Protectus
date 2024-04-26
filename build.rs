@@ -8,6 +8,7 @@ pub fn main() {
         "deactivate_license_command",
         "is_protected_command",
         "is_virtual_machine_command",
-        "is_debugger_present_command"
+        "is_debugger_present_command",
+        "feature_check_command"
     ]).build();
 }

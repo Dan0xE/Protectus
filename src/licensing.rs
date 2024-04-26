@@ -11,10 +11,11 @@ pub fn get_hwid_command() -> Result<String, ()> {
     Ok(get_hwid())
 }
 
+
 #[command]
 pub fn set_serial_number_command(serial_str: String) -> Result<String, String> {
     let serial_bytes = serial_str.into_bytes();
-
+    
     match set_serial_number(serial_bytes) {
         Ok(serial_state) => {
             let states = serialize_serial_state(serial_state);
@@ -27,7 +28,7 @@ pub fn set_serial_number_command(serial_str: String) -> Result<String, String> {
 }
 
 #[command]
-pub fn get_serial_number_state_command() -> Result<String, ()> {
+pub fn get_serial_number_state_command() -> Result<String, String> {
     let serial_state = get_serial_number_state();
     let states = serialize_serial_state(serial_state);
     Ok(format!("Serial state: {}", states.join(", ")))
