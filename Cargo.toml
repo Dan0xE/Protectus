@@ -8,14 +8,15 @@ links   = "protectus"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
-tauri = { version = "2.0.0-beta", features = [] }
+tauri = { version = "2", features = [] }
 serde = { version = "1", features = ["derive"] }
 vmprotect = {git = "https://github.com/Dan0xE/vmprotect.git", features = ["licensing", "service"], tag = "v1.0.1" }
 base64 = "0.22"
 chrono = "0.4"
+thiserror = "2"
 
 [build-dependencies]
-tauri-plugin = { version = "2.0.0-beta", features = ["build"] }
+tauri-plugin = { version = "2", features = ["build"] }
 
 [features]
 default = ["service"]
