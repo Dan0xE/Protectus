@@ -1,5 +1,6 @@
 use std::time::Duration;
 
+use base64::{Engine as _, engine::general_purpose};
 use serde::Serialize;
 use tauri::command;
 use vmprotect::licensing::{ActivationStatus, SerialNumberData, SerialState};
@@ -15,6 +16,7 @@ pub struct SerializableSerialNumberData {
     user_data: String,    // Base64 encoded
 }
 
+#[inline]
 fn format_duration(duration: Duration) -> String {
     format!("{} seconds", duration.as_secs())
 }
@@ -43,30 +45,33 @@ impl From<SerialNumberData> for SerializableSerialNumberData {
             state: serialize_serial_state(data.state),
             user_name: data.user_name,
             email: data.email,
-            expire: data.expire.map(|date| date.and_hms(0, 0, 0).to_rfc3339()),
+            expire: data
+                .expire
+                .and_then(|date| date.and_hms_opt(0, 0, 0))
+                .map(|dt| dt.and_utc().to_rfc3339()),
             max_build: data
                 .max_build
-                .map(|date| date.and_hms(0, 0, 0).to_rfc3339()),
+                .and_then(|date| date.and_hms_opt(0, 0, 0))
+                .map(|dt| dt.and_utc().to_rfc3339()),
             running_time: format_duration(data.running_time),
-            user_data: base64::encode(&data.user_data),
+            user_data: general_purpose::STANDARD.encode(&data.user_data),
         }
     }
 }
 
-pub fn activation_status_to_error_message(status: ActivationStatus) -> String {
+pub fn activation_status_to_error_message(status: ActivationStatus) -> &'static str {
     match status {
-        ActivationStatus::Ok => "Unexpected OK status".to_string(),
-        ActivationStatus::SmallBuffer => "The provided buffer is too small.".to_string(),
-        ActivationStatus::NoConnection => "No connection to the activation server.".to_string(),
-        ActivationStatus::BadReply => "Received a bad reply from the server.".to_string(),
-        ActivationStatus::Banned => "The license has been banned.".to_string(),
-        ActivationStatus::Corrupted => "The license data is corrupted.".to_string(),
-        ActivationStatus::BadCode => "The provided license code is invalid.".to_string(),
-        ActivationStatus::AlreadyUsed => "The license has already been used.".to_string(),
-        ActivationStatus::SerialUnknown => "The serial number is unknown.".to_string(),
-        ActivationStatus::Expired => "The license has expired.".to_string(),
-        ActivationStatus::NotAvailable => "The license is not available.".to_string(),
-        ActivationStatus::NulError => "The license contains a NUL character.".to_string(),
+        ActivationStatus::Ok => "OK",
+        ActivationStatus::SmallBuffer => "The provided buffer is too small",
+        ActivationStatus::NoConnection => "No connection to the activation server.",
+        ActivationStatus::BadReply => "Received a bad reply from the server.",
+        ActivationStatus::Banned => "The license has been banned",
+        ActivationStatus::Corrupted => "The license data is corrupted",
+        ActivationStatus::BadCode => "The provided license code is invalid.",
+        ActivationStatus::AlreadyUsed => "The license has already been used.",
+        ActivationStatus::SerialUnknown => "The serial number is unknown.",
+        ActivationStatus::Expired => "The license has expired.",
+        ActivationStatus::NotAvailable => "The license is not available.",
     }
 }
 
@@ -74,6 +79,12 @@ pub fn activation_status_to_error_message(status: ActivationStatus) -> String {
 pub struct Features {
     pub licensing: bool,
     pub service: bool,
+}
+
+impl Default for Features {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl Features {
@@ -86,6 +97,6 @@ impl Features {
 }
 
 #[command]
-pub fn feature_check_command() -> Result<Features, ()> {
-    Ok(Features::new()) 
+pub fn feature_check_command() -> Features {
+    Features::new()
 }

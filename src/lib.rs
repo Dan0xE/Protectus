@@ -4,20 +4,9 @@ pub mod licensing;
 #[cfg(feature = "service")]
 pub mod service;
 
-use serde::Serialize;
-use tauri::plugin::{Builder, TauriPlugin};
-use tauri::{command, Runtime};
-
-
-#[cfg(feature = "licensing")]
-use crate::licensing::*;
-#[cfg(feature = "service")]
-use crate::service::*;
 use helper::feature_check_command;
-
-
-    
-
+use tauri::Runtime;
+use tauri::plugin::{Builder, TauriPlugin};
 
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
     let mut builder = Builder::new("protectus");
