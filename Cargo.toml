@@ -10,7 +10,7 @@ links   = "protectus"
 [dependencies]
 tauri = { version = "2", features = [] }
 serde = { version = "1", features = ["derive"] }
-vmprotect = {git = "https://github.com/Dan0xE/vmprotect.git", features = ["licensing", "service"], tag = "v1.0.1" }
+vmprotect = {git = "https://github.com/Dan0xE/vmprotect.git", features = ["licensing", "service"], tag = "v1.0.2" }
 base64 = "0.22"
 chrono = "0.4"
 thiserror = "2"
