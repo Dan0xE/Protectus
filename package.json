@@ -4,7 +4,7 @@
   "main": "webview-dist/index.js",
   "license": "MIT",
   "dependencies": {
-    "@tauri-apps/api": "^2.0.0-beta"
+    "@tauri-apps/api": "^2.9.1"
   },
   "devDependencies": {
     "typescript": "^4.9.5",

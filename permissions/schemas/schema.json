@@ -49,7 +49,7 @@
           "minimum": 1.0
         },
         "description": {
-          "description": "Human-readable description of what the permission does.",
+          "description": "Human-readable description of what the permission does. Tauri convention is to use `<h4>` headings in markdown content for Tauri documentation generation purposes.",
           "type": [
             "string",
             "null"
@@ -111,7 +111,7 @@
           "type": "string"
         },
         "description": {
-          "description": "Human-readable description of what the permission does.",
+          "description": "Human-readable description of what the permission does. Tauri internal convention is to use `<h4>` headings in markdown content for Tauri documentation generation purposes.",
           "type": [
             "string",
             "null"
@@ -172,7 +172,7 @@
       }
     },
     "Scopes": {
-      "description": "A restriction of the command/endpoint functionality.\n\nIt can be of any serde serializable type and is used for allowing or preventing certain actions inside a Tauri command.\n\nThe scope is passed to the command and handled/enforced by the command itself.",
+      "description": "An argument for fine grained behavior control of Tauri commands.\n\nIt can be of any serde serializable type and is used to allow or prevent certain actions inside a Tauri command. The configured scope is passed to the command and will be enforced by the command implementation.\n\n## Example\n\n```json { \"allow\": [{ \"path\": \"$HOME/**\" }], \"deny\": [{ \"path\": \"$HOME/secret.txt\" }] } ```",
       "type": "object",
       "properties": {
         "allow": {
@@ -186,7 +186,7 @@
           }
         },
         "deny": {
-          "description": "Data that defines what is denied by the scope.",
+          "description": "Data that defines what is denied by the scope. This should be prioritized by validation logic.",
           "type": [
             "array",
             "null"
@@ -295,144 +295,124 @@
       "type": "string",
       "oneOf": [
         {
-          "description": "allow-activate-license-command -> Enables the activate_license_command command without any pre-configured scope.",
+          "description": "Enables the activate_license_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-activate-license-command"
-          ]
+          "const": "allow-activate-license-command",
+          "markdownDescription": "Enables the activate_license_command command without any pre-configured scope."
         },
         {
-          "description": "deny-activate-license-command -> Denies the activate_license_command command without any pre-configured scope.",
+          "description": "Denies the activate_license_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-activate-license-command"
-          ]
+          "const": "deny-activate-license-command",
+          "markdownDescription": "Denies the activate_license_command command without any pre-configured scope."
         },
         {
-          "description": "allow-deactivate-license-command -> Enables the deactivate_license_command command without any pre-configured scope.",
+          "description": "Enables the deactivate_license_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-deactivate-license-command"
-          ]
+          "const": "allow-deactivate-license-command",
+          "markdownDescription": "Enables the deactivate_license_command command without any pre-configured scope."
         },
         {
-          "description": "deny-deactivate-license-command -> Denies the deactivate_license_command command without any pre-configured scope.",
+          "description": "Denies the deactivate_license_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-deactivate-license-command"
-          ]
+          "const": "deny-deactivate-license-command",
+          "markdownDescription": "Denies the deactivate_license_command command without any pre-configured scope."
         },
         {
-          "description": "allow-feature-check-command -> Enables the feature_check_command command without any pre-configured scope.",
+          "description": "Enables the feature_check_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-feature-check-command"
-          ]
+          "const": "allow-feature-check-command",
+          "markdownDescription": "Enables the feature_check_command command without any pre-configured scope."
         },
         {
-          "description": "deny-feature-check-command -> Denies the feature_check_command command without any pre-configured scope.",
+          "description": "Denies the feature_check_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-feature-check-command"
-          ]
+          "const": "deny-feature-check-command",
+          "markdownDescription": "Denies the feature_check_command command without any pre-configured scope."
         },
         {
-          "description": "allow-get-hwid-command -> Enables the get_hwid_command command without any pre-configured scope.",
+          "description": "Enables the get_hwid_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-get-hwid-command"
-          ]
+          "const": "allow-get-hwid-command",
+          "markdownDescription": "Enables the get_hwid_command command without any pre-configured scope."
         },
         {
-          "description": "deny-get-hwid-command -> Denies the get_hwid_command command without any pre-configured scope.",
+          "description": "Denies the get_hwid_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-get-hwid-command"
-          ]
+          "const": "deny-get-hwid-command",
+          "markdownDescription": "Denies the get_hwid_command command without any pre-configured scope."
         },
         {
-          "description": "allow-get-serial-number-data-command -> Enables the get_serial_number_data_command command without any pre-configured scope.",
+          "description": "Enables the get_serial_number_data_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-get-serial-number-data-command"
-          ]
+          "const": "allow-get-serial-number-data-command",
+          "markdownDescription": "Enables the get_serial_number_data_command command without any pre-configured scope."
         },
         {
-          "description": "deny-get-serial-number-data-command -> Denies the get_serial_number_data_command command without any pre-configured scope.",
+          "description": "Denies the get_serial_number_data_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-get-serial-number-data-command"
-          ]
+          "const": "deny-get-serial-number-data-command",
+          "markdownDescription": "Denies the get_serial_number_data_command command without any pre-configured scope."
         },
         {
-          "description": "allow-get-serial-number-state-command -> Enables the get_serial_number_state_command command without any pre-configured scope.",
+          "description": "Enables the get_serial_number_state_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-get-serial-number-state-command"
-          ]
+          "const": "allow-get-serial-number-state-command",
+          "markdownDescription": "Enables the get_serial_number_state_command command without any pre-configured scope."
         },
         {
-          "description": "deny-get-serial-number-state-command -> Denies the get_serial_number_state_command command without any pre-configured scope.",
+          "description": "Denies the get_serial_number_state_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-get-serial-number-state-command"
-          ]
+          "const": "deny-get-serial-number-state-command",
+          "markdownDescription": "Denies the get_serial_number_state_command command without any pre-configured scope."
         },
         {
-          "description": "allow-is-debugger-present-command -> Enables the is_debugger_present_command command without any pre-configured scope.",
+          "description": "Enables the is_debugger_present_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-is-debugger-present-command"
-          ]
+          "const": "allow-is-debugger-present-command",
+          "markdownDescription": "Enables the is_debugger_present_command command without any pre-configured scope."
         },
         {
-          "description": "deny-is-debugger-present-command -> Denies the is_debugger_present_command command without any pre-configured scope.",
+          "description": "Denies the is_debugger_present_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-is-debugger-present-command"
-          ]
+          "const": "deny-is-debugger-present-command",
+          "markdownDescription": "Denies the is_debugger_present_command command without any pre-configured scope."
         },
         {
-          "description": "allow-is-protected-command -> Enables the is_protected_command command without any pre-configured scope.",
+          "description": "Enables the is_protected_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-is-protected-command"
-          ]
+          "const": "allow-is-protected-command",
+          "markdownDescription": "Enables the is_protected_command command without any pre-configured scope."
         },
         {
-          "description": "deny-is-protected-command -> Denies the is_protected_command command without any pre-configured scope.",
+          "description": "Denies the is_protected_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-is-protected-command"
-          ]
+          "const": "deny-is-protected-command",
+          "markdownDescription": "Denies the is_protected_command command without any pre-configured scope."
         },
         {
-          "description": "allow-is-virtual-machine-command -> Enables the is_virtual_machine_command command without any pre-configured scope.",
+          "description": "Enables the is_virtual_machine_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-is-virtual-machine-command"
-          ]
+          "const": "allow-is-virtual-machine-command",
+          "markdownDescription": "Enables the is_virtual_machine_command command without any pre-configured scope."
         },
         {
-          "description": "deny-is-virtual-machine-command -> Denies the is_virtual_machine_command command without any pre-configured scope.",
+          "description": "Denies the is_virtual_machine_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-is-virtual-machine-command"
-          ]
+          "const": "deny-is-virtual-machine-command",
+          "markdownDescription": "Denies the is_virtual_machine_command command without any pre-configured scope."
         },
         {
-          "description": "allow-set-serial-number-command -> Enables the set_serial_number_command command without any pre-configured scope.",
+          "description": "Enables the set_serial_number_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "allow-set-serial-number-command"
-          ]
+          "const": "allow-set-serial-number-command",
+          "markdownDescription": "Enables the set_serial_number_command command without any pre-configured scope."
         },
         {
-          "description": "deny-set-serial-number-command -> Denies the set_serial_number_command command without any pre-configured scope.",
+          "description": "Denies the set_serial_number_command command without any pre-configured scope.",
           "type": "string",
-          "enum": [
-            "deny-set-serial-number-command"
-          ]
+          "const": "deny-set-serial-number-command",
+          "markdownDescription": "Denies the set_serial_number_command command without any pre-configured scope."
         }
       ]
     }
