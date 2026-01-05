@@ -1,22 +1,269 @@
-| Permission | Description |
-|------|-----|
-|`allow-activate-license-command`|Enables the activate_license_command command without any pre-configured scope.|
-|`deny-activate-license-command`|Denies the activate_license_command command without any pre-configured scope.|
-|`allow-deactivate-license-command`|Enables the deactivate_license_command command without any pre-configured scope.|
-|`deny-deactivate-license-command`|Denies the deactivate_license_command command without any pre-configured scope.|
-|`allow-feature-check-command`|Enables the feature_check_command command without any pre-configured scope.|
-|`deny-feature-check-command`|Denies the feature_check_command command without any pre-configured scope.|
-|`allow-get-hwid-command`|Enables the get_hwid_command command without any pre-configured scope.|
-|`deny-get-hwid-command`|Denies the get_hwid_command command without any pre-configured scope.|
-|`allow-get-serial-number-data-command`|Enables the get_serial_number_data_command command without any pre-configured scope.|
-|`deny-get-serial-number-data-command`|Denies the get_serial_number_data_command command without any pre-configured scope.|
-|`allow-get-serial-number-state-command`|Enables the get_serial_number_state_command command without any pre-configured scope.|
-|`deny-get-serial-number-state-command`|Denies the get_serial_number_state_command command without any pre-configured scope.|
-|`allow-is-debugger-present-command`|Enables the is_debugger_present_command command without any pre-configured scope.|
-|`deny-is-debugger-present-command`|Denies the is_debugger_present_command command without any pre-configured scope.|
-|`allow-is-protected-command`|Enables the is_protected_command command without any pre-configured scope.|
-|`deny-is-protected-command`|Denies the is_protected_command command without any pre-configured scope.|
-|`allow-is-virtual-machine-command`|Enables the is_virtual_machine_command command without any pre-configured scope.|
-|`deny-is-virtual-machine-command`|Denies the is_virtual_machine_command command without any pre-configured scope.|
-|`allow-set-serial-number-command`|Enables the set_serial_number_command command without any pre-configured scope.|
-|`deny-set-serial-number-command`|Denies the set_serial_number_command command without any pre-configured scope.|
+## Permission Table
+
+<table>
+<tr>
+<th>Identifier</th>
+<th>Description</th>
+</tr>
+
+
+<tr>
+<td>
+
+`protectus:allow-activate-license-command`
+
+</td>
+<td>
+
+Enables the activate_license_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-activate-license-command`
+
+</td>
+<td>
+
+Denies the activate_license_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-deactivate-license-command`
+
+</td>
+<td>
+
+Enables the deactivate_license_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-deactivate-license-command`
+
+</td>
+<td>
+
+Denies the deactivate_license_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-feature-check-command`
+
+</td>
+<td>
+
+Enables the feature_check_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-feature-check-command`
+
+</td>
+<td>
+
+Denies the feature_check_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-get-hwid-command`
+
+</td>
+<td>
+
+Enables the get_hwid_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-get-hwid-command`
+
+</td>
+<td>
+
+Denies the get_hwid_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-get-serial-number-data-command`
+
+</td>
+<td>
+
+Enables the get_serial_number_data_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-get-serial-number-data-command`
+
+</td>
+<td>
+
+Denies the get_serial_number_data_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-get-serial-number-state-command`
+
+</td>
+<td>
+
+Enables the get_serial_number_state_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-get-serial-number-state-command`
+
+</td>
+<td>
+
+Denies the get_serial_number_state_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-is-debugger-present-command`
+
+</td>
+<td>
+
+Enables the is_debugger_present_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-is-debugger-present-command`
+
+</td>
+<td>
+
+Denies the is_debugger_present_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-is-protected-command`
+
+</td>
+<td>
+
+Enables the is_protected_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-is-protected-command`
+
+</td>
+<td>
+
+Denies the is_protected_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-is-virtual-machine-command`
+
+</td>
+<td>
+
+Enables the is_virtual_machine_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-is-virtual-machine-command`
+
+</td>
+<td>
+
+Denies the is_virtual_machine_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:allow-set-serial-number-command`
+
+</td>
+<td>
+
+Enables the set_serial_number_command command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`protectus:deny-set-serial-number-command`
+
+</td>
+<td>
+
+Denies the set_serial_number_command command without any pre-configured scope.
+
+</td>
+</tr>
+</table>
