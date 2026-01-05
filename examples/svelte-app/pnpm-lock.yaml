@@ -12,8 +12,8 @@ dependencies:
     specifier: 2.0.0-beta.2
     version: 2.0.0-beta.2
   '@tauri-apps/plugin-shell':
-    specifier: '>=2.0.0-beta.0'
-    version: 2.0.0-beta.2
+    specifier: '>=2.2.1'
+    version: 2.2.1
   protectus:
     specifier: link:../../
     version: link:../..
@@ -517,6 +517,10 @@ packages:
     engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
     dev: false
 
+  /@tauri-apps/api@2.9.1:
+    resolution: {integrity: sha512-IGlhP6EivjXHepbBic618GOmiWe4URJiIeZFlB7x3czM0yDHHYviH1Xvoiv4FefdkQtn6v7TuwWCRfOGdnVUGw==}
+    dev: false
+
   /@tauri-apps/cli-darwin-arm64@2.0.0-beta.13:
     resolution: {integrity: sha512-/ibwIj1n2TQSXazGr79K4sfiZ85JndGXjMVN5QD9M8AkhpqgiSM+QT+qfIb+Y8p/RY9v1w1h3+zKMJXjhIppbA==}
     engines: {node: '>= 10'}
@@ -630,10 +634,10 @@ packages:
       '@tauri-apps/api': 2.0.0-beta.4
     dev: false
 
-  /@tauri-apps/plugin-shell@2.0.0-beta.2:
-    resolution: {integrity: sha512-9rWsfN7Wt+EuWmpmNnK8bCs+04fzhEYrHtWyLIAYxb9diFdcJrEoctCP9YM2v+Uf8/y8qFC7VCbZ/9VQHANymQ==}
+  /@tauri-apps/plugin-shell@2.2.1:
+    resolution: {integrity: sha512-G1GFYyWe/KlCsymuLiNImUgC8zGY0tI0Y3p8JgBCWduR5IEXlIJS+JuG1qtveitwYXlfJrsExt3enhv5l2/yhA==}
     dependencies:
-      '@tauri-apps/api': 2.0.0-beta.4
+      '@tauri-apps/api': 2.9.1
     dev: false
 
   /@tsconfig/svelte@5.0.4:
