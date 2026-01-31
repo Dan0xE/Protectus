@@ -2,8 +2,6 @@
   import {checkIfDebuggerPresent, checkIfProtected, checkIfVirtualMachine, getHardwareId, getSerialNumberData, getSerialNumberState} from 'protectus'
   import {message} from '@tauri-apps/plugin-dialog'
 
-  type SomeFunc<T> = (...args: T[]) => Promise<T>;
-
   function _message(msg: string, kind: "warning" | "error", title: string) {
     message(msg, {
       kind,
@@ -12,16 +10,9 @@
   }
 
 
-  function _executer<T>(name: string, ...func: SomeFunc<T>[]) {
-    func.forEach((fn => fn().then((res) => {
-      console.log(res)
-      
-      if(res === "myhwid") {
-        return _message("Cannot access HWID, please protect the Application with VmProtect first", "error", "HWID Check")
-      }
-
-      let result = typeof res === "object" ? JSON.stringify(res) : res
-      _message(`Result is: ${result}`, "warning", name)}).catch((e) => _message(`Something went wrong: ${e}`, "error", name))))
+  function _executer(name: string, func: (() => Promise<unknown>)) {
+      func().then((res) => {
+      _message(`Result is: ${res}`, "warning", name)}).catch((e) => _message(`Something went wrong: ${e}`, "error", name))
   }
 
   const _libfuncs = [
