@@ -1,5 +1,11 @@
 # Protectus
 
+> [!IMPORTANT]
+> We have decided to terminate support for Protectus after recieving some lovely letters from Ivan (Ivan runs vmpsoft, the company behind vmprotect).
+> If you are a legitimate business seeking unparalelled obfuscation for your binaries, we can recommend https://codedefender.io. Furthemore, we've decided to invest more resources into supporting public deobfuscation research and tools, such as [Mergen](https://deobfuscator.io).
+> To you Ivan, thanks for the good laugh ;)
+
+![Ivan Message](assets/ivan.png)
 
 ## Supported functions
 
